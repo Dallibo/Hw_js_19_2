@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Doc</title>
+  <style>
+    #modal {
+      display: none;
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+    #modal-content {
+        width: 50%;
+      background-color: rgb(171, 224, 220);
+      margin: 20% auto;
+      padding: 20px;
+      text-align: center;
+    }
+    .b1{
+        width: 75%;
+    }
+  </style>
+</head>
+<body>
+  <button  onclick="openModal()">Open modal</button>
+
+  <div id="modal" onclick="closeModal()">
+    <div id="modal-content">
+      <h2>Hellow from Modal Window</h2>
+      <button class="b1" onclick="closeModal()">close</button>
+    </div>
+  </div>
+
+  <script>
+    function openModal() {
+      document.getElementById("modal").style.display = "block";
+    }
+
+    function closeModal() {
+      document.getElementById("modal").style.display = "none";
+    }
+  </script>
+</body>
+</html>

@@ -1,11 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title></title>
+    <style>
+        .d1{
+            display:inline-block;
+            padding: 10px;
+            background-color: bisque;
+            text-align: center;
+        }
+        #nameInput{
+            padding: 5px;
+        }
+    </style>
 </head>
+
 <body>
-    
+    <div class="d1">
+        <label for="nameInput">Enter your name:</label>
+        <div>
+            <input type="text" id="nameInput" oninput="filterInput(event)" />
+        </div>
+    </div>
+    <script>
+        function filterInput(event) {
+            var input = event.target;
+            var filteredValue = input.value.replace(/\d/g, '');
+            input.value = filteredValue;
+        }
+    </script>
 </body>
+
 </html>

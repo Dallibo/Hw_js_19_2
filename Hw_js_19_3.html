@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Doc</title>
+    <style>
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        #field {
+            width: 100%;
+            height: 100%;
+            background-color: rgb(3, 77, 3);
+            position: relative;
+        }
+
+        #ball {
+            width: 100px;
+            height: 100px;
+            background-color: rgb(255, 255, 255);
+            border-radius: 50%;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transition: left 0.5s, top 0.5s;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="field">
+        <div id="ball"></div>
+    </div>
+
+    <script>
+        var field = document.getElementById("field");
+        var ball = document.getElementById("ball");
+
+        field.addEventListener("click", function (event) {
+            var clickX = event.clientX;
+            var clickY = event.clientY;
+            var fieldRect = field.getBoundingClientRect()
+            
+
+        });
+    </script>
+</body>
+
+</html>
