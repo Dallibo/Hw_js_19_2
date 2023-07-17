@@ -41,9 +41,16 @@
         var ball = document.getElementById("ball");
 
         field.addEventListener("click", function (event) {
+            var ballSize = ball.offsetWidth
             var clickX = event.clientX;
             var clickY = event.clientY;
             var fieldRect = field.getBoundingClientRect()
+
+            var fieldRect = field.getBoundingClientRect()
+            var fieldLeft = fieldRect.left
+            var fildTop = fildRect.top
+
+            var ballX = clickX - fildLeft 
         });
     </script>
 </body>

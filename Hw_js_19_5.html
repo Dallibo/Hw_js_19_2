@@ -1,11 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        #d1 {
+            background-color: bisque;
+        }
+    </style>
 </head>
 <body>
-    
+    <div id="d1">
+        <div onclick="changeColor(this)">1. Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus rerum assumenda praesentium ut iure
+            harum.</div>
+        <div onclick="changeColor(this)">2. Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat sed dignissimos officiis.</div>
+        <div onclick="changeColor(this)">3. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae assumenda itaque hic doloribus?</div>
+        <div onclick="changeColor(this)">4. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Optio omnis voluptatum fugiat! Omnis nemo
+            ducimus vel quia totam aliquam.</div>
+        <div onclick="changeColor(this)">5. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, adipisci?</div>
+        <div onclick="changeColor(this)">6. Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, aperiam quia. Sed, dignissimos nisi.
+        </div>
+        <div onclick="changeColor(this)">7. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptas ipsam quia mollitia accusantium, quas
+            corporis nesciunt omnis?</div>
+    </div>
+
+    <script>
+        function changeColor(element) {
+            var currentColor = element.style.backgroundColor;
+            if (currentColor === "" || currentColor === "bisque") {
+                element.style.backgroundColor = "orange";
+            } else {
+                element.style.backgroundColor = "bisque";
+            }
+        }
+    </script>
 </body>
+
 </html>
