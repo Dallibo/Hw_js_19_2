@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Doc</title>
+    <title>Футбольне поле з переміщуючимся м'ячем</title>
     <style>
         html,
         body {
@@ -11,46 +11,56 @@
             overflow: hidden;
         }
 
-        #field {
+        #soccerField {
             width: 100%;
             height: 100%;
-            background-color: rgb(3, 77, 3);
+            background-color: rgb(27, 92, 27);
             position: relative;
         }
 
-        #ball {
+        #soccerBall {
             width: 100px;
             height: 100px;
-            background-color: rgb(255, 255, 255);
+            background-color: white;
             border-radius: 50%;
-            position: absolute;
             left: 50%;
             top: 50%;
+            position: absolute;
             transition: left 0.5s, top 0.5s;
         }
     </style>
 </head>
 
 <body>
-    <div id="field">
-        <div id="ball"></div>
+    <div id="soccerField">
+        <div id="soccerBall"></div>
     </div>
 
     <script>
-        var field = document.getElementById("field");
-        var ball = document.getElementById("ball");
+        var soccerField = document.getElementById("soccerField");
+        var soccerBall = document.getElementById("soccerBall");
 
-        field.addEventListener("click", function (event) {
-            var ballSize = ball.offsetWidth
+        soccerField.addEventListener("click", function (event) {
+            var ballSize = soccerBall.offsetWidth;
             var clickX = event.clientX;
             var clickY = event.clientY;
-            var fieldRect = field.getBoundingClientRect()
 
-            var fieldRect = field.getBoundingClientRect()
-            var fieldLeft = fieldRect.left
-            var fildTop = fildRect.top
+            var fieldRect = soccerField.getBoundingClientRect();
+            var fieldLeft = fieldRect.left;
+            var fieldTop = fieldRect.top;
 
-            var ballX = clickX - fildLeft 
+            var ballX = clickX - fieldLeft - ballSize / 2;
+            var ballY = clickY - fieldTop - ballSize / 2;
+
+            var fieldWidth = fieldRect.width;
+            var fieldHeight = fieldRect.height;
+            ballX = Math.max(ballX, 0);
+            ballX = Math.min(ballX, fieldWidth - ballSize);
+            ballY = Math.max(ballY, 0);
+            ballY = Math.min(ballY, fieldHeight - ballSize);
+
+            soccerBall.style.left = ballX + "px";
+            soccerBall.style.top = ballY + "px";
         });
     </script>
 </body>
